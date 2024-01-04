@@ -19,7 +19,6 @@ export class HomeComponent {
     this.countriesService
       .getCountries()
       .then((response) => {
-        console.log('carregou');
         return (this.listCountries = response.data);
       })
       .catch((error) => {

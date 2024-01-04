@@ -6,4 +6,7 @@ export interface Country {
   continents: string[];
   timezones: string[];
   languages: string[];
+  flags: {
+    png: string;
+  };
 }

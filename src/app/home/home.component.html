@@ -1,5 +1,10 @@
 <p>home works!</p>
-
-<ng-template ngFor let-item [ngForOf]="listCountries" let-i="index">
-  <app-card [country]="item" />
-</ng-template>
+<div class="container">
+  <div class="row">
+    <ng-template ngFor let-item [ngForOf]="listCountries" let-i="index">
+      <div class="col-3 mb-5">
+        <app-card [country]="item" />
+      </div>
+    </ng-template>
+  </div>
+</div>

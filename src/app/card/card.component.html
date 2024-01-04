@@ -1,12 +1,28 @@
-{{ country.name.common }}<br />
-{{ country.continents }}<br />
-<b>População:</b> {{ country.population }}<br />
-<b>Timezones:</b> {{ country.timezones }}<br />
+<div class="card">
+  <img :src="{{ country.flags.png }}" />
 
-<b>Linguas:</b
-><ng-container
-  *ngFor="let item of country.languages | keyvalue; let isLast = last"
->
-  {{ item.key }}{{ isLast ? "" : ", " }}
-</ng-container>
-<br />
+  <div class="card-body">
+    <h5 class="card-title">{{ country.name.common }}</h5>
+    <p class="card-text mb-0">{{ country.continents }}</p>
+    <hr />
+    <p class="card-text mb-0"><b>População:</b> {{ country.population }}</p>
+    <p class="card-text mb-0">
+      <b>Timezones:</b> {{ country.timezones.slice(0, 3) }}
+    </p>
+    <p class="card-text">
+      <b>Linguas:</b>
+      <ng-container
+        *ngFor="
+          let item of country.languages | keyvalue;
+          let isLast = last;
+          index as i
+        "
+      >
+        {{ item.key }}{{ isLast ? "" : ", " }}
+      </ng-container>
+    </p>
+    <a :routerLink="/country/{{ country.name.common }}" class="btn btn-primary"
+      >SAIBA MAIS</a
+    >
+  </div>
+</div>
