@@ -1,2 +1,7 @@
 <p>home works!</p>
-<app-card>card aqui</app-card>
+
+<ng-template ngFor let-item [ngForOf]="listCountries" let-i="index">
+  <li>
+    <app-card [country]="item" />
+  </li>
+</ng-template>
