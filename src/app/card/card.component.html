@@ -1,1 +1,12 @@
-{{ country.name.common }}
+{{ country.name.common }}<br />
+{{ country.continents }}<br />
+<b>População:</b> {{ country.population }}<br />
+<b>Timezones:</b> {{ country.timezones }}<br />
+
+<b>Linguas:</b
+><ng-container
+  *ngFor="let item of country.languages | keyvalue; let isLast = last"
+>
+  {{ item.key }}{{ isLast ? "" : ", " }}
+</ng-container>
+<br />

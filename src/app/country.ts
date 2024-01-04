@@ -1,4 +1,9 @@
 export interface Country {
-  name: string;
+  name: {
+    common: string;
+  };
   population: number;
+  continents: string[];
+  timezones: string[];
+  languages: string[];
 }
