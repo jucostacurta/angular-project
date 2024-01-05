@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Injectable, Input } from '@angular/core';
-import { ListCountries } from '../list-countries';
-import { Country } from '../country';
+import { ListCountries } from '../home/list-countries-interface';
+import { Country } from './country-interface';
 import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
@@ -12,10 +12,6 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styleUrl: './card.component.scss',
 })
 export class CardComponent {
-  title = 'País';
-
-  @Input() listCountries: ListCountries = [];
-
   @Input() country: Country = {
     name: { common: '' },
     population: 0,

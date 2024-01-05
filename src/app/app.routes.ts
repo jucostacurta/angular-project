@@ -9,8 +9,8 @@ export const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'country',
-    title: 'País',
+    path: 'country/:country',
+    title: 'Detalhe do país',
     component: CountryComponent,
   },
 ];

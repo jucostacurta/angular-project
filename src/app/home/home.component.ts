@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { CardComponent } from '../card/card.component';
 import { CountriesService } from './home.service';
 import { CommonModule } from '@angular/common';
+import { ListCountries } from './list-countries-interface';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  listCountries: any = [];
+  listCountries = [];
 
   constructor(private countriesService: CountriesService) {}
 
@@ -29,5 +30,5 @@ export class HomeComponent {
   ngOnInit() {
     this.getCountries();
   }
-  @Input() listCountriesProp = this.listCountries;
+  @Input() listCountriesProp: ListCountries = this.listCountries;
 }
