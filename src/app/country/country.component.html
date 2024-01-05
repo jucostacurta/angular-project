@@ -1,0 +1,33 @@
+<div class="container containerSmall">
+  <div class="row">
+    <div class="card mt-3 mb-3">
+      <div class="row">
+        <img :src="{{ country.flags.png }}" />
+
+        <div class="card-body">
+          <h5 class="card-title">{{ country.name.common }}</h5>
+          <p class="card-text mb-0">{{ country.continents }}</p>
+          <hr />
+          <p class="card-text mb-0">
+            <b>População:</b> {{ country.population }}
+          </p>
+          <p class="card-text mb-0">
+            <b>Timezones:</b> {{ country.timezones.slice(0, 3) }}
+          </p>
+          <p class="card-text">
+            <b>Linguas:</b>
+            <ng-container
+              *ngFor="
+                let item of country.languages | keyvalue;
+                let isLast = last;
+                index as i
+              "
+            >
+              {{ item.key }}{{ isLast ? "" : ", " }}
+            </ng-container>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="container mt-4 containerFilter">
+  <div class="row">
+    <div class="col-11">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Busque pelo país"
+        aria-label="Busque pelo país"
+        [(ngModel)]="search"
+      />
+    </div>
+    <div class="col-1">
+      <button class="btn btn-primary" (click)="searchCountry()">Buscar</button>
+    </div>
+  </div>
+</div>
+<div class="container mt-4">
+  <div class="row" *ngIf="searchedCountry.length < 1; else searched">
+    <div class="col-3 mb-5" *ngFor="let country of listCountries">
+      <app-card [country]="country" />
+    </div>
+  </div>
+  <ng-template #searched>
+    <div class="row">
+      <div class="col-3 mb-5" *ngFor="let country of searchedCountry">
+        <app-card [country]="country" />
+      </div>
+    </div>
+  </ng-template>
+</div>
