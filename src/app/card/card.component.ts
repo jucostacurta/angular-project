@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Injectable, Input } from '@angular/core';
-import { ListCountries } from '../home/list-countries-interface';
+import { Component, Input } from '@angular/core';
 import { Country } from './country-interface';
 import { RouterLink, RouterOutlet } from '@angular/router';
 
